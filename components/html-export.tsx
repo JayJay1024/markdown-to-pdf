@@ -2,12 +2,12 @@
 
 import { Button } from "@heroui/button";
 
-interface PdfExportProps {
+interface HtmlExportProps {
   contentRef: React.RefObject<HTMLDivElement>;
 }
 
-export default function HtmlExport({ contentRef }: PdfExportProps) {
-  const exportToPDF = async () => {
+export default function HtmlExport({ contentRef }: HtmlExportProps) {
+  const exportToHtml = async () => {
     if (contentRef.current) {
       try {
         const element = contentRef.current;
@@ -113,7 +113,7 @@ export default function HtmlExport({ contentRef }: PdfExportProps) {
   };
 
   return (
-    <Button className="flex-1" color="primary" onClick={exportToPDF}>
+    <Button className="flex-1" color="primary" onClick={exportToHtml}>
       Export as HTML
     </Button>
   );

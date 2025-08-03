@@ -1,21 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static optimization for better performance
+  // Production optimizations
   output: 'standalone',
   
-  // Optimize images for production
+  // Image optimization for better performance
   images: {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
   },
   
-  // Enable compression
+  // Enable gzip compression
   compress: true,
   
-  // Optimize bundle size
-  experimental: {
-    optimizeCss: true,
-  },
+  // Note: Experimental features disabled to avoid build issues
+  // experimental: {
+  //   optimizeCss: true, // Requires 'critters' dependency
+  // },
 };
 
 module.exports = nextConfig;
