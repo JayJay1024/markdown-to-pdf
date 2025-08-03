@@ -1,6 +1,6 @@
 # Markdown Editor
 
-A powerful Markdown editor with real-time preview and PDF export functionality.
+A powerful Markdown editor with real-time preview and HTML export functionality. Convert your HTML exports to PDF using browser print or online tools.
 
 ## Features
 
@@ -49,6 +49,49 @@ pnpm start
 2. **Real-time Preview**: View formatted results on the right
 3. **Export HTML**: Click "Export as HTML" to download content as formatted HTML file
 
+## Export to PDF
+
+Since this editor exports HTML files, you can easily convert them to PDF using your browser's print functionality:
+
+### Method 1: Browser Print (Recommended)
+
+1. **Export HTML**: Click "Export as HTML" button to download the HTML file
+2. **Open in Browser**: Double-click the downloaded HTML file to open it in your default browser
+3. **Print to PDF**:
+   - Press `Ctrl+P` (Windows/Linux) or `Cmd+P` (Mac)
+   - Or go to Menu → Print
+4. **Save as PDF**:
+   - In the print dialog, select "Save as PDF" or "Microsoft Print to PDF" as the destination
+   - Click "Save" to download the PDF file
+
+### Method 2: Online Converters
+
+1. **Export HTML**: Download the HTML file using the export button
+2. **Upload to Converter**: Use online services like:
+   - [CloudConvert](https://cloudconvert.com/html-to-pdf)
+   - [ILovePDF](https://www.ilovepdf.com/html-to-pdf)
+   - [SmallPDF](https://smallpdf.com/html-to-pdf)
+3. **Download PDF**: Convert and download the PDF file
+
+### Method 3: Command Line Tools
+
+If you have tools like `wkhtmltopdf` installed:
+
+```bash
+# Install wkhtmltopdf (macOS)
+brew install wkhtmltopdf
+
+# Convert HTML to PDF
+wkhtmltopdf input.html output.pdf
+```
+
+### PDF Quality Tips
+
+- **Use Browser Print**: Generally provides the best formatting and quality
+- **Check Margins**: Adjust page margins in the print dialog for better layout
+- **Select Paper Size**: Choose A4 or Letter size as needed
+- **Enable Background Graphics**: Check this option to include colors and images
+
 ## Supported Markdown Syntax
 
 - Headers (H1-H6)
@@ -71,12 +114,11 @@ markdown-to-pdf/
 │   ├── page.tsx           # Main page
 │   └── ...
 ├── components/            # React components
-│   ├── pdf-export.tsx     # PDF export component
-│   ├── navbar.tsx         # Navigation bar
-│   └── ...
+│   ├── html-export.tsx    # HTML export component
+│   ├── logo.tsx           # Logo component
+│   └── primitives.ts      # Style primitives
 ├── config/               # Configuration files
 ├── styles/               # Style files
-├── types/                # TypeScript type definitions
 └── public/               # Static assets
 ```
 
