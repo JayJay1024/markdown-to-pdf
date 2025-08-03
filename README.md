@@ -8,6 +8,8 @@
 [![pnpm](https://img.shields.io/badge/pnpm-9.15.4-FF6C37?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
 [![ESLint](https://img.shields.io/badge/ESLint-9.25.1-4B32C3?style=for-the-badge&logo=eslint)](https://eslint.org/)
 [![Prettier](https://img.shields.io/badge/Prettier-3.5.3-F7B93E?style=for-the-badge&logo=prettier)](https://prettier.io/)
+[![CI/CD](https://img.shields.io/github/actions/workflow/status/JayJay1024/markdown-to-pdf/ci.yml?branch=main&style=for-the-badge)](https://github.com/JayJay1024/markdown-to-pdf/actions)
+[![Dependabot](https://img.shields.io/badge/Dependabot-enabled-025E8C?style=for-the-badge&logo=dependabot)](https://dependabot.com/)
 
 A powerful Markdown editor with real-time preview and HTML export functionality. Convert your HTML exports to PDF using browser print or online tools.
 

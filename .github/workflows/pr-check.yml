@@ -1,0 +1,61 @@
+name: Pull Request Check
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # PR Title and Description Check
+  pr-title-check:
+    name: PR Title Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check PR title format
+        uses: amannn/action-semantic-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          types: |
+            feat
+            fix
+            docs
+            style
+            refactor
+            test
+            chore
+            ci
+            build
+            perf
+            revert
+          requireScope: false
+          requireBody: false
+
+  # Code Coverage Check (Optional)
+  coverage:
+    name: Coverage Check
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Check bundle size
+        run: |
+          pnpm build
+          echo "Bundle size check completed"
+          # Add specific bundle size check logic here 

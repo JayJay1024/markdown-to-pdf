@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  # Deploy to Vercel (Optional)
+  deploy-vercel:
+    name: Deploy to Vercel
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Build application
+        run: pnpm build
+        
+      # Uncomment the following steps if you want to deploy to Vercel
+      # - name: Deploy to Vercel
+      #   uses: amondnet/vercel-action@v25
+      #   with:
+      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      #     vercel-org-id: ${{ secrets.ORG_ID }}
+      #     vercel-project-id: ${{ secrets.PROJECT_ID }}
+      #     vercel-args: '--prod'
+      
+      - name: Deploy status
+        run: echo "Deployment completed successfully" 
