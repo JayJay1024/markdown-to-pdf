@@ -60,7 +60,7 @@
     "eslint-plugin-unused-imports": "4.1.4",
     "globals": "16.0.0",
     "postcss": "8.5.6",
-    "prettier": "3.5.3",
+    "prettier": "3.6.2",
     "tailwind-variants": "2.0.1",
     "tailwindcss": "4.1.11",
     "typescript": "5.6.3"
