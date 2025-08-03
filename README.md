@@ -10,6 +10,7 @@
 [![Prettier](https://img.shields.io/badge/Prettier-3.5.3-F7B93E?style=for-the-badge&logo=prettier)](https://prettier.io/)
 [![CI/CD](https://img.shields.io/github/actions/workflow/status/JayJay1024/markdown-to-pdf/ci.yml?branch=main&style=for-the-badge)](https://github.com/JayJay1024/markdown-to-pdf/actions)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-025E8C?style=for-the-badge&logo=dependabot)](https://dependabot.com/)
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://markdown-to-pdf-five.vercel.app/)
 
 A powerful Markdown editor with real-time preview and HTML export functionality. Convert your HTML exports to PDF using browser print or online tools.
 
@@ -46,6 +47,10 @@ pnpm dev
 ```
 
 The application will start at [http://localhost:3000](http://localhost:3000).
+
+### Live Demo
+
+🌐 **Live Demo**: [https://markdown-to-pdf-five.vercel.app/](https://markdown-to-pdf-five.vercel.app/)
 
 ### Build for Production
 
@@ -148,6 +153,14 @@ pnpm lint
 ```bash
 pnpm type-check
 ```
+
+## Performance Monitoring
+
+For production deployments, consider adding:
+
+- **Vercel Analytics**: Monitor real user performance
+- **Error Tracking**: Add Sentry or similar for error monitoring
+- **Performance Budgets**: Set up bundle size limits in CI/CD
 
 ## License
 

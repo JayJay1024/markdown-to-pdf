@@ -39,6 +39,10 @@ jobs:
       #     vercel-org-id: ${{ secrets.ORG_ID }}
       #     vercel-project-id: ${{ secrets.PROJECT_ID }}
       #     vercel-args: '--prod'
+      #   env:
+      #     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      #     VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+      #     VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
       
       - name: Deploy status
         run: echo "Deployment completed successfully" 
