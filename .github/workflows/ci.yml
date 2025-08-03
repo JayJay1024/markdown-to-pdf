@@ -23,9 +23,7 @@ jobs:
           
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4
-          
+        
       - name: Get pnpm store directory
         shell: bash
         run: |
@@ -65,9 +63,7 @@ jobs:
           
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4
-          
+        
       - name: Get pnpm store directory
         shell: bash
         run: |
@@ -110,9 +106,7 @@ jobs:
           
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4
-          
+        
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
         
