@@ -1,53 +1,101 @@
-# Next.js & HeroUI Template
+# Markdown Editor
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+A powerful Markdown editor with real-time preview and PDF export functionality.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+## Features
 
-## Technologies Used
+- **Real-time Preview**: Input Markdown content and see formatted results in real-time
+- **HTML Export**: Export content as formatted HTML file (can be converted to PDF via browser print)
+- **Syntax Highlighting**: Support for code block syntax highlighting
+- **Table Support**: Support for GitHub Flavored Markdown tables
+- **Responsive Design**: Adapts to various screen sizes
+- **Dark Mode**: Support for dark and light theme switching
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+## Tech Stack
 
-## How to Use
+- **Frontend Framework**: Next.js 15
+- **UI Component Library**: HeroUI
+- **Styling**: Tailwind CSS
+- **Markdown Rendering**: react-markdown + remark-gfm
+- **Export**: Native browser APIs
+- **Type Safety**: TypeScript
 
-### Use the template with create-next-app
+## Quick Start
 
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
-```
-
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+### Install Dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
-### Run the development server
+### Start Development Server
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
-### Setup pnpm (optional)
+The application will start at [http://localhost:3000](http://localhost:3000).
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+### Build for Production
 
 ```bash
-public-hoist-pattern[]=*@heroui/*
+pnpm build
+pnpm start
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+## Usage
+
+1. **Edit Markdown**: Input Markdown content in the left editor
+2. **Real-time Preview**: View formatted results on the right
+3. **Export HTML**: Click "Export as HTML" to download content as formatted HTML file
+
+## Supported Markdown Syntax
+
+- Headers (H1-H6)
+- Bold, Italic
+- Code blocks and inline code
+- Lists (ordered and unordered)
+- Links and images
+- Tables
+- Blockquotes
+- Horizontal rules
+- Task lists
+- Strikethrough
+
+## Project Structure
+
+```
+markdown-to-pdf/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Main page
+│   └── ...
+├── components/            # React components
+│   ├── pdf-export.tsx     # PDF export component
+│   ├── navbar.tsx         # Navigation bar
+│   └── ...
+├── config/               # Configuration files
+├── styles/               # Style files
+├── types/                # TypeScript type definitions
+└── public/               # Static assets
+```
+
+## Development
+
+### Code Standards
+
+The project uses ESLint and Prettier for code formatting:
+
+```bash
+pnpm lint
+```
+
+### Type Checking
+
+```bash
+pnpm type-check
+```
 
 ## License
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+MIT License
