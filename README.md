@@ -1,5 +1,14 @@
 # Markdown Editor
 
+[![Next.js](https://img.shields.io/badge/Next.js-15.3.1-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![HeroUI](https://img.shields.io/badge/HeroUI-2.4.20-purple?style=for-the-badge)](https://heroui.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.11-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+[![pnpm](https://img.shields.io/badge/pnpm-9.15.4-FF6C37?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
+[![ESLint](https://img.shields.io/badge/ESLint-9.25.1-4B32C3?style=for-the-badge&logo=eslint)](https://eslint.org/)
+[![Prettier](https://img.shields.io/badge/Prettier-3.5.3-F7B93E?style=for-the-badge&logo=prettier)](https://prettier.io/)
+
 A powerful Markdown editor with real-time preview and HTML export functionality. Convert your HTML exports to PDF using browser print or online tools.
 
 ## Features
