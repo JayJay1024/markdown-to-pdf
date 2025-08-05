@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@heroui/button";
+import { Tooltip } from "@heroui/tooltip";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
@@ -158,13 +159,21 @@ export default function PdfExport({ contentRef }: PdfExportProps) {
   };
 
   return (
-    <Button
-      isDisabled
-      className="flex-1"
-      color="secondary"
-      onPress={exportToPdf}
+    <Tooltip
+      showArrow
+      content="Coming soon! PDF export feature is under development."
+      placement="top"
     >
-      Export as PDF
-    </Button>
+      <div className="flex-1">
+        <Button
+          isDisabled
+          className="w-full"
+          color="secondary"
+          onPress={exportToPdf}
+        >
+          Export as PDF
+        </Button>
+      </div>
+    </Tooltip>
   );
 }
