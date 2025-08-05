@@ -12,12 +12,13 @@
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-025E8C?style=for-the-badge&logo=dependabot)](https://dependabot.com/)
 [![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://markdown-to-pdf-five.vercel.app/)
 
-A powerful Markdown editor with real-time preview and HTML export functionality. Convert your HTML exports to PDF using browser print or online tools.
+A powerful Markdown editor with real-time preview, HTML export, and direct PDF export functionality. Convert your Markdown content to professional PDF documents with a single click.
 
 ## Features
 
 - **Real-time Preview**: Input Markdown content and see formatted results in real-time
-- **HTML Export**: Export content as formatted HTML file (can be converted to PDF via browser print)
+- **HTML Export**: Export content as formatted HTML file
+- **PDF Export**: Direct PDF export with professional formatting and styling
 - **Syntax Highlighting**: Support for code block syntax highlighting
 - **Table Support**: Support for GitHub Flavored Markdown tables
 - **Responsive Design**: Adapts to various screen sizes
@@ -29,6 +30,7 @@ A powerful Markdown editor with real-time preview and HTML export functionality.
 - **UI Component Library**: HeroUI
 - **Styling**: Tailwind CSS
 - **Markdown Rendering**: react-markdown + remark-gfm
+- **PDF Export**: html2pdf.js
 - **Export**: Native browser APIs
 - **Type Safety**: TypeScript
 
@@ -63,13 +65,19 @@ pnpm start
 
 1. **Edit Markdown**: Input Markdown content in the left editor
 2. **Real-time Preview**: View formatted results on the right
-3. **Export HTML**: Click "Export as HTML" to download content as formatted HTML file
+3. **Export Options**: 
+   - Click "Export as HTML" to download content as formatted HTML file
+   - Click "Export as PDF" to download content as professional PDF document
 
 ## Export to PDF
 
-Since this editor exports HTML files, you can easily convert them to PDF using your browser's print functionality:
+This editor provides direct PDF export functionality using html2pdf.js. You can also convert HTML exports to PDF using your browser's print functionality:
 
-### Method 1: Browser Print (Recommended)
+### Method 1: Direct PDF Export (Recommended)
+
+Simply click the "Export as PDF" button to download your content as a professional PDF document with proper formatting, styling, and page breaks.
+
+### Method 2: Browser Print
 
 1. **Export HTML**: Click "Export as HTML" button to download the HTML file
 2. **Open in Browser**: Double-click the downloaded HTML file to open it in your default browser
@@ -80,7 +88,7 @@ Since this editor exports HTML files, you can easily convert them to PDF using y
    - In the print dialog, select "Save as PDF" or "Microsoft Print to PDF" as the destination
    - Click "Save" to download the PDF file
 
-### Method 2: Online Converters
+### Method 3: Online Converters
 
 1. **Export HTML**: Download the HTML file using the export button
 2. **Upload to Converter**: Use online services like:
@@ -89,7 +97,7 @@ Since this editor exports HTML files, you can easily convert them to PDF using y
    - [SmallPDF](https://smallpdf.com/html-to-pdf)
 3. **Download PDF**: Convert and download the PDF file
 
-### Method 3: Command Line Tools
+### Method 4: Command Line Tools
 
 If you have tools like `wkhtmltopdf` installed:
 
