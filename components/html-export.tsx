@@ -113,7 +113,7 @@ export default function HtmlExport({ contentRef }: HtmlExportProps) {
   };
 
   return (
-    <Button className="flex-1" color="primary" onClick={exportToHtml}>
+    <Button className="flex-1" color="primary" onPress={exportToHtml}>
       Export as HTML
     </Button>
   );

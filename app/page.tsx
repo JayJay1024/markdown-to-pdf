@@ -9,6 +9,7 @@ import remarkGfm from "remark-gfm";
 
 import { subtitle } from "@/components/primitives";
 import HtmlExport from "@/components/html-export";
+import PdfExport from "@/components/pdf-export";
 import { Logo } from "@/components/logo";
 
 export default function Home() {
@@ -20,16 +21,30 @@ Start typing your Markdown content here...
 
 - **Real-time Preview**: See your content formatted as you type
 - **HTML Export**: Export your content as a formatted HTML file
+- **PDF Export**: Export your content as a professional PDF document
 - **Syntax Highlighting**: Code blocks with syntax highlighting
 - **Table Support**: Create tables easily with Markdown syntax
 
-### Example
+### Code Example
 
 \`\`\`javascript
-console.log("Hello, World!");
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+
+greet("World");
 \`\`\`
 
-> This is a blockquote example.
+### Table Example
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| HTML Export | Export as formatted HTML | ✅ |
+| PDF Export | Export as professional PDF | ✅ |
+| Real-time Preview | Live preview as you type | ✅ |
+| Syntax Highlighting | Code blocks with colors | ✅ |
+
+> This is a blockquote example showing how quotes are formatted.
 
 **Happy writing!**`);
 
@@ -42,12 +57,13 @@ console.log("Hello, World!");
           <Logo size={48} />
         </div>
         <p className={subtitle({ class: "mt-2" })}>
-          Input Markdown content, preview in real-time and export as HTML
+          Input Markdown content, preview in real-time and export as HTML or PDF
         </p>
       </div>
 
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-4 gap-2">
         <HtmlExport contentRef={previewRef} />
+        <PdfExport contentRef={previewRef} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -57,9 +73,12 @@ console.log("Hello, World!");
             <h3 className="text-lg font-semibold">Editor</h3>
           </CardHeader>
           <Divider />
-          <CardBody className="p-0">
+          <CardBody className="px-0">
             <Textarea
-              className="h-full min-h-[500px] resize-none border-0 focus:ring-0"
+              classNames={{
+                inputWrapper: "border-none",
+                input: "h-full min-h-[500px] resize-none border-0 focus:ring-0",
+              }}
               placeholder="Enter Markdown content here..."
               value={markdown}
               variant="bordered"
