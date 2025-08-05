@@ -164,14 +164,16 @@ export default function PdfExport({ contentRef }: PdfExportProps) {
       content="Coming soon! PDF export feature is under development."
       placement="top"
     >
-      <Button
-        isDisabled
-        className="flex-1"
-        color="secondary"
-        onPress={exportToPdf}
-      >
-        Export as PDF
-      </Button>
+      <div className="flex-1">
+        <Button
+          isDisabled
+          className="w-full"
+          color="secondary"
+          onPress={exportToPdf}
+        >
+          Export as PDF
+        </Button>
+      </div>
     </Tooltip>
   );
 }
