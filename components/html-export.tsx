@@ -113,8 +113,10 @@ export default function HtmlExport({ contentRef }: HtmlExportProps) {
   };
 
   return (
-    <Button className="flex-1" color="primary" onPress={exportToHtml}>
-      Export as HTML
-    </Button>
+    <div className="flex-1">
+      <Button className="w-full" color="primary" onPress={exportToHtml}>
+        Export as HTML
+      </Button>
+    </div>
   );
 }
