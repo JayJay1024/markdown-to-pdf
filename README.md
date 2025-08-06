@@ -30,7 +30,7 @@ A powerful Markdown editor with real-time preview, HTML export, and direct PDF e
 - **UI Component Library**: HeroUI
 - **Styling**: Tailwind CSS
 - **Markdown Rendering**: react-markdown + remark-gfm
-- **PDF Export**: html2pdf.js
+- **PDF Export**: puppeteer-core + Browserless.io
 - **Export**: Native browser APIs
 - **Type Safety**: TypeScript
 
@@ -71,50 +71,54 @@ pnpm start
 
 ## Export to PDF
 
-This editor provides direct PDF export functionality using html2pdf.js. You can also convert HTML exports to PDF using your browser's print functionality:
+This editor provides direct PDF export functionality using puppeteer-core connected to Browserless.io. The PDF generation happens on the server-side, ensuring consistent and high-quality output.
 
-### Method 1: Direct PDF Export (Recommended)
+### Server-side PDF Generation
 
-Simply click the "Export as PDF" button to download your content as a professional PDF document with proper formatting, styling, and page breaks.
+The application uses:
+- **puppeteer-core**: For browser automation
+- **Browserless.io**: Cloud-based Chrome browser service
+- **Server-side rendering**: Ensures consistent PDF output across all devices
 
-### Method 2: Browser Print
+### Configuration
+
+To enable PDF export functionality, you need to configure Browserless.io:
+
+1. **Get Browserless Token**:
+   - Visit [Browserless.io](https://www.browserless.io/)
+   - Sign up for a free account
+   - Get your API token from the dashboard
+
+2. **Set Environment Variables**:
+   Create a `.env.local` file in the project root:
+   ```bash
+   # Browserless.io Configuration
+   BROWSERLESS_TOKEN=your_browserless_token_here
+   
+   # Optional: Custom Browserless URL (default: https://chrome.browserless.io)
+   # BROWSERLESS_URL=https://chrome.browserless.io
+   ```
+
+3. **Vercel Deployment**:
+   - Add the environment variables in your Vercel project settings
+   - Go to Project Settings → Environment Variables
+   - Add `BROWSERLESS_TOKEN` with your token value
+
+### PDF Features
+
+- **Professional Formatting**: Clean, readable typography
+- **Code Syntax Highlighting**: Properly formatted code blocks
+- **Table Support**: Well-formatted tables with borders
+- **Page Breaks**: Automatic page breaks for long content
+- **Print-optimized**: Optimized for PDF output
+
+### Alternative Export Methods
+
+If you prefer client-side PDF generation, you can also:
 
 1. **Export HTML**: Click "Export as HTML" button to download the HTML file
-2. **Open in Browser**: Double-click the downloaded HTML file to open it in your default browser
-3. **Print to PDF**:
-   - Press `Ctrl+P` (Windows/Linux) or `Cmd+P` (Mac)
-   - Or go to Menu → Print
-4. **Save as PDF**:
-   - In the print dialog, select "Save as PDF" or "Microsoft Print to PDF" as the destination
-   - Click "Save" to download the PDF file
-
-### Method 3: Online Converters
-
-1. **Export HTML**: Download the HTML file using the export button
-2. **Upload to Converter**: Use online services like:
-   - [CloudConvert](https://cloudconvert.com/html-to-pdf)
-   - [ILovePDF](https://www.ilovepdf.com/html-to-pdf)
-   - [SmallPDF](https://smallpdf.com/html-to-pdf)
-3. **Download PDF**: Convert and download the PDF file
-
-### Method 4: Command Line Tools
-
-If you have tools like `wkhtmltopdf` installed:
-
-```bash
-# Install wkhtmltopdf (macOS)
-brew install wkhtmltopdf
-
-# Convert HTML to PDF
-wkhtmltopdf input.html output.pdf
-```
-
-### PDF Quality Tips
-
-- **Use Browser Print**: Generally provides the best formatting and quality
-- **Check Margins**: Adjust page margins in the print dialog for better layout
-- **Select Paper Size**: Choose A4 or Letter size as needed
-- **Enable Background Graphics**: Check this option to include colors and images
+2. **Browser Print**: Open the HTML file and use browser's print-to-PDF functionality
+3. **Online Converters**: Use services like CloudConvert, ILovePDF, etc.
 
 ## Supported Markdown Syntax
 
