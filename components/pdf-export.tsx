@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@heroui/button";
+import { Tooltip } from "@heroui/tooltip";
 import { useState } from "react";
 
 interface PdfExportProps {
@@ -52,13 +53,18 @@ export default function PdfExport({ contentRef }: PdfExportProps) {
   };
 
   return (
-    <Button
-      className="flex-1"
-      color="secondary"
-      isLoading={isLoading}
-      onPress={exportToPdf}
-    >
-      Export as PDF
-    </Button>
+    <Tooltip content="Coming soon ~">
+      <div className="flex-1">
+        <Button
+          isDisabled
+          className="w-full"
+          color="secondary"
+          isLoading={isLoading}
+          onPress={exportToPdf}
+        >
+          Export as PDF
+        </Button>
+      </div>
+    </Tooltip>
   );
 }
