@@ -80,30 +80,6 @@ The application uses:
 - **Browserless.io**: Cloud-based Chrome browser service
 - **Server-side rendering**: Ensures consistent PDF output across all devices
 
-### Configuration
-
-To enable PDF export functionality, you need to configure Browserless.io:
-
-1. **Get Browserless Token**:
-   - Visit [Browserless.io](https://www.browserless.io/)
-   - Sign up for a free account
-   - Get your API token from the dashboard
-
-2. **Set Environment Variables**:
-   Create a `.env.local` file in the project root:
-   ```bash
-   # Browserless.io Configuration
-   BROWSERLESS_TOKEN=your_browserless_token_here
-   
-   # Optional: Custom Browserless URL (default: https://chrome.browserless.io)
-   # BROWSERLESS_URL=https://chrome.browserless.io
-   ```
-
-3. **Vercel Deployment**:
-   - Add the environment variables in your Vercel project settings
-   - Go to Project Settings → Environment Variables
-   - Add `BROWSERLESS_TOKEN` with your token value
-
 ### PDF Features
 
 - **Professional Formatting**: Clean, readable typography

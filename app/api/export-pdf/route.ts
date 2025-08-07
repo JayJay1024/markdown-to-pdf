@@ -45,18 +45,12 @@ export async function POST(request: NextRequest) {
     const host = request.headers.get("host") || "localhost:3000";
     const baseUrl = `${protocol}://${host}`;
 
-    console.log("baseUrl:", baseUrl);
-
     const previewUrl = `${baseUrl}/pdf-preview?content=${encodedContent}`;
 
-    console.log("encodedContent:", encodedContent);
-
     await page.goto(previewUrl, {
-      waitUntil: "domcontentloaded",
+      waitUntil: "networkidle0",
       timeout: 30000,
     });
-
-    console.log("after goto");
 
     // Wait for content rendering
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -64,7 +58,8 @@ export async function POST(request: NextRequest) {
     // Generate PDF
     const pdf = await page.pdf({
       format: "A4",
-      printBackground: true,
+      omitBackground: true,
+      printBackground: false,
       margin: {
         top: "20mm",
         right: "20mm",
