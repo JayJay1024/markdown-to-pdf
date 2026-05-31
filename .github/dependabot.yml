@@ -1,21 +1,21 @@
 version: 2
 updates:
-  # Enable npm dependency updates
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 10
-    assignees:
-      - "JayJay1024"
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-    labels:
-      - "dependencies"
-      - "automated"
+  # Disabled npm dependency updates
+  # - package-ecosystem: "npm"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+  #     day: "monday"
+  #     time: "09:00"
+  #   open-pull-requests-limit: 10
+  #   assignees:
+  #     - "JayJay1024"
+  #   commit-message:
+  #     prefix: "chore"
+  #     include: "scope"
+  #   labels:
+  #     - "dependencies"
+  #     - "automated"
 
   # Enable GitHub Actions updates
   - package-ecosystem: "github-actions"
