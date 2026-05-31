@@ -10,14 +10,15 @@
 [![Prettier](https://img.shields.io/badge/Prettier-3.5.3-F7B93E?style=for-the-badge&logo=prettier)](https://prettier.io/)
 [![CI/CD](https://img.shields.io/github/actions/workflow/status/JayJay1024/markdown-to-pdf/ci.yml?branch=main&style=for-the-badge)](https://github.com/JayJay1024/markdown-to-pdf/actions)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-025E8C?style=for-the-badge&logo=dependabot)](https://dependabot.com/)
-[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://markdown-to-pdf-five.vercel.app/)
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://www.markdown2pdf.xyz/)
 
-A powerful Markdown editor with real-time preview and HTML export functionality. Convert your HTML exports to PDF using browser print or online tools.
+A powerful Markdown editor with real-time preview, HTML export, and direct PDF export functionality. Convert your Markdown content to professional PDF documents with a single click.
 
 ## Features
 
 - **Real-time Preview**: Input Markdown content and see formatted results in real-time
-- **HTML Export**: Export content as formatted HTML file (can be converted to PDF via browser print)
+- **HTML Export**: Export content as formatted HTML file
+- **PDF Export**: Direct PDF export with professional formatting and styling
 - **Syntax Highlighting**: Support for code block syntax highlighting
 - **Table Support**: Support for GitHub Flavored Markdown tables
 - **Responsive Design**: Adapts to various screen sizes
@@ -29,6 +30,7 @@ A powerful Markdown editor with real-time preview and HTML export functionality.
 - **UI Component Library**: HeroUI
 - **Styling**: Tailwind CSS
 - **Markdown Rendering**: react-markdown + remark-gfm
+- **PDF Export**: puppeteer-core + Browserless.io
 - **Export**: Native browser APIs
 - **Type Safety**: TypeScript
 
@@ -48,9 +50,7 @@ pnpm dev
 
 The application will start at [http://localhost:3000](http://localhost:3000).
 
-### Live Demo
-
-🌐 **Live Demo**: [https://markdown-to-pdf-five.vercel.app/](https://markdown-to-pdf-five.vercel.app/)
+🌐 **Website**: [https://markdown2pdf.xyz](https://www.markdown2pdf.xyz/)
 
 ### Build for Production
 
@@ -63,50 +63,36 @@ pnpm start
 
 1. **Edit Markdown**: Input Markdown content in the left editor
 2. **Real-time Preview**: View formatted results on the right
-3. **Export HTML**: Click "Export as HTML" to download content as formatted HTML file
+3. **Export Options**: 
+   - Click "Export as HTML" to download content as formatted HTML file
+   - Click "Export as PDF" to download content as professional PDF document
 
 ## Export to PDF
 
-Since this editor exports HTML files, you can easily convert them to PDF using your browser's print functionality:
+This editor provides direct PDF export functionality using puppeteer-core connected to Browserless.io. The PDF generation happens on the server-side, ensuring consistent and high-quality output.
 
-### Method 1: Browser Print (Recommended)
+### Server-side PDF Generation
+
+The application uses:
+- **puppeteer-core**: For browser automation
+- **Browserless.io**: Cloud-based Chrome browser service
+- **Server-side rendering**: Ensures consistent PDF output across all devices
+
+### PDF Features
+
+- **Professional Formatting**: Clean, readable typography
+- **Code Syntax Highlighting**: Properly formatted code blocks
+- **Table Support**: Well-formatted tables with borders
+- **Page Breaks**: Automatic page breaks for long content
+- **Print-optimized**: Optimized for PDF output
+
+### Alternative Export Methods
+
+If you prefer client-side PDF generation, you can also:
 
 1. **Export HTML**: Click "Export as HTML" button to download the HTML file
-2. **Open in Browser**: Double-click the downloaded HTML file to open it in your default browser
-3. **Print to PDF**:
-   - Press `Ctrl+P` (Windows/Linux) or `Cmd+P` (Mac)
-   - Or go to Menu → Print
-4. **Save as PDF**:
-   - In the print dialog, select "Save as PDF" or "Microsoft Print to PDF" as the destination
-   - Click "Save" to download the PDF file
-
-### Method 2: Online Converters
-
-1. **Export HTML**: Download the HTML file using the export button
-2. **Upload to Converter**: Use online services like:
-   - [CloudConvert](https://cloudconvert.com/html-to-pdf)
-   - [ILovePDF](https://www.ilovepdf.com/html-to-pdf)
-   - [SmallPDF](https://smallpdf.com/html-to-pdf)
-3. **Download PDF**: Convert and download the PDF file
-
-### Method 3: Command Line Tools
-
-If you have tools like `wkhtmltopdf` installed:
-
-```bash
-# Install wkhtmltopdf (macOS)
-brew install wkhtmltopdf
-
-# Convert HTML to PDF
-wkhtmltopdf input.html output.pdf
-```
-
-### PDF Quality Tips
-
-- **Use Browser Print**: Generally provides the best formatting and quality
-- **Check Margins**: Adjust page margins in the print dialog for better layout
-- **Select Paper Size**: Choose A4 or Letter size as needed
-- **Enable Background Graphics**: Check this option to include colors and images
+2. **Browser Print**: Open the HTML file and use browser's print-to-PDF functionality
+3. **Online Converters**: Use services like CloudConvert, ILovePDF, etc.
 
 ## Supported Markdown Syntax
 
